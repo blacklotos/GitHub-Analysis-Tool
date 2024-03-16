@@ -1,0 +1,17 @@
+{
+    "schema_version": "v1",
+    "name_for_human": "GitHub Analysis Tool",
+    "name_for_model": "githubanalysis",
+    "description_for_human": "Analyzes GitHub repositories for commits and pull requests to identify security vulnerabilities.",
+    "description_for_model": "This plugin analyzes GitHub repositories, focusing on commits and pull requests, to detect and explain security vulnerabilities.",
+    "auth": {
+        "type": "none"
+    },
+    "api": {
+        "type": "openapi",
+        "url": "https://github-analysis-tool.kgdtln.repl.co/.well-known/openapi.yaml"
+    },
+    "logo_url": "https://github-analysis-tool.kgdtln.repl.co/logo.png",
+    "contact_email": "support@yourdomain.com",
+    "legal_info_url": "https://github-analysis-tool.kgdtln.repl.co/legal"
+}

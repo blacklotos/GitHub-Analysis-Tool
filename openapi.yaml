@@ -1,0 +1,44 @@
+openapi: 3.0.1
+info:
+  title: GitHub Analysis Tool
+  description: An API that analyzes GitHub repositories for commits and pull requests to identify security vulnerabilities.
+  version: '1.0'
+servers:
+  - url: https://7ba0e4ab-5862-4984-ae8f-607eb758c6c8-00-ug52hpt7g2ww.riker.replit.dev/
+paths:
+  /analyze:
+    get:
+      operationId: analyzeGitHub
+      summary: Analyzes a given GitHub URL for security vulnerabilities.
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: The GitHub URL to be analyzed.
+          schema:
+            type: string
+        - name: folder
+          in: query
+          required: false
+          description: Filter files by folder name.
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Analysis results returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AnalyzeResponse'
+        '400':
+          description: Bad request, e.g., invalid URL format.
+        '500':
+          description: Internal server error.
+components:
+  schemas:
+    AnalyzeResponse:
+      type: object
+      properties:
+        analysis:
+          type: string
+          description: Details of the analysis on the provided GitHub URL.
